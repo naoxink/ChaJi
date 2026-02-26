@@ -1,0 +1,32 @@
+[
+  {
+    "fecha": "2026-02-25",
+    "te_id": "1",
+    "nombre": "Doi Pu Muen Dark Oolong",
+    "tienda": "Tea Shop",
+    "recipiente": "Gaiwan de Cristal",
+    "puntuacion": 4.0,
+    "parametros": "4g / 100ml / 90ºC",
+    "comentario": "Intenso si se pasa de los 10s de infusión al menos en las 3-4 primeras. Ess dulzón, oscuro y muy sabroso.",
+    "tags": [
+      "oscuro",
+      "hoja grande",
+      "intenso",
+      "sabroso"
+    ]
+  },
+  {
+    "fecha": "2026-02-26",
+    "te_id": "4",
+    "nombre": "Playadito",
+    "tienda": "Supercaro",
+    "recipiente": "Mate de acero",
+    "puntuacion": 4.5,
+    "parametros": "70ºC",
+    "comentario": "Suavesito, de tranqui, lo malo es que se lava muy pronto.",
+    "tags": [
+      "con palo",
+      "suave"
+    ]
+  }
+]

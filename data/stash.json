@@ -1,0 +1,48 @@
+[
+  {
+    "id": "1",
+    "nombre": "Doi Pu Muen Dark Oolong",
+    "tipo": "Oolong",
+    "tienda": "Tea Shop",
+    "origen": "Tailandia",
+    "añada": "N/A",
+    "en_stock": true,
+    "tags": [
+      "hoja grande",
+      "oscuro"
+    ]
+  },
+  {
+    "id": "2",
+    "nombre": "Special Yellow Sun",
+    "tipo": "Té Amarillo",
+    "tienda": "Tea Shop",
+    "origen": "Desconocido",
+    "añada": "N/A",
+    "en_stock": true,
+    "tags": []
+  },
+  {
+    "id": "3",
+    "nombre": "Ya Bao Silver Buds",
+    "tipo": "Té Blanco",
+    "tienda": "Tea Shop",
+    "origen": "Yunnan",
+    "añada": "N/A",
+    "en_stock": true,
+    "tags": []
+  },
+  {
+    "id": "4",
+    "nombre": "Playadito",
+    "tipo": "Yerba Mate",
+    "tienda": "Supercaro",
+    "origen": "Argentina",
+    "añada": "N/A",
+    "en_stock": true,
+    "tags": [
+      "suave",
+      "con palo"
+    ]
+  }
+]

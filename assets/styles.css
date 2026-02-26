@@ -1,0 +1,4 @@
+body { background-color: #f8f5f0; color: #2d3436; font-family: serif; }
+.tab-active { border-bottom: 2px solid #2d3436; font-weight: bold; }
+.card { background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.tag { background-color: #f1f2f6; color: #1c1e21; font-size: 0.9rem; padding: 2px 8px; border-radius: 999px; }
