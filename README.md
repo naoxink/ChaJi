@@ -38,7 +38,7 @@ Para gestionar tus tés y sesiones, abre tu terminal en la carpeta raíz del pro
 
 ```bash
 python scripts/cata.py
-
+```
 
 ## 🛠️ Tecnologías
 **Backend**: Python 3 (Gestión de datos persistentes en JSON).
