@@ -28,5 +28,21 @@
       "con palo",
       "suave"
     ]
+  },
+  {
+    "fecha": "2026-02-27",
+    "te_id": "1",
+    "nombre": "Doi Pu Muen Dark Oolong",
+    "tienda": "Tea Shop",
+    "recipiente": "Gaiwan de Porcelana",
+    "puntuacion": 4.0,
+    "parametros": "6.2 / 130ml / 90ºC",
+    "comentario": "Buen té para diario, no es muy caro y está muy bueno. Esta vez las infusiones las he hecho más cortas (6-7s) y es genial para ir desayunando o tomarlo de charleta.",
+    "tags": [
+      "desayuno",
+      "hoja grande",
+      "oscuro",
+      "suave"
+    ]
   }
 ]
