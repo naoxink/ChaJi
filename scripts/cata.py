@@ -202,13 +202,14 @@ def menu_principal():
         limpiar_pantalla()
         print(f"\n📝 Registrando cata para: {te['nombre']}")
 
-        recipiente = seleccionar_recipiente() # <--- Nueva pregunta
+        recipiente = seleccionar_recipiente()
 
         nueva = {
             "fecha": str(date.today()),
             "te_id": te['id'],
             "nombre": te['nombre'],
             "tienda": te.get('tienda', 'N/A'),
+            "ingredientes": te.get('ingredientes'),
             "recipiente": recipiente,
             "puntuacion": float(input("Nota (0-5): ") or 0),
             "parametros": input("Parámetros (ej: 7g/110ml/95C): ") or "Gongfu",
