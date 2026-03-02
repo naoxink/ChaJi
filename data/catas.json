@@ -44,5 +44,21 @@
       "oscuro",
       "suave"
     ]
+  },
+  {
+    "fecha": "2026-03-02",
+    "te_id": "5",
+    "nombre": "Tropical Chai",
+    "tienda": "Tea Shop",
+    "recipiente": "Tetera de Cristal",
+    "puntuacion": 3.0,
+    "parametros": "5g / 250ml / 3-4m / 90ºC",
+    "comentario": "No está mal, me sabe al típico té estándar de una tetería random. Un clásico si te van los sabores clásicos para un día de lluvia.",
+    "tags": [
+      "mezcla",
+      "desayuno",
+      "témezcla",
+      "dulce"
+    ]
   }
 ]

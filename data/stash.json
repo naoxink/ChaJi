@@ -39,10 +39,24 @@
     "tienda": "Supercaro",
     "origen": "Argentina",
     "añada": "N/A",
-    "en_stock": true,
+    "en_stock": false,
     "tags": [
       "suave",
       "con palo"
+    ]
+  },
+  {
+    "id": "5",
+    "nombre": "Tropical Chai",
+    "tipo": "Té Negro",
+    "tienda": "Tea Shop",
+    "origen": "Desconocido",
+    "añada": "2026",
+    "en_stock": false,
+    "ingredientes": "Té negro, semillas de hinojo, canela, jengibre rallado, copos de coco, pimienta negra, aroma, semillas de cardamomo",
+    "tags": [
+      "dulce",
+      "mezcla"
     ]
   }
 ]
