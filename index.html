@@ -71,6 +71,7 @@
                     <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-stone-500 mb-4 font-sans">
                         <span>⚖️ ${c.parametros}</span>
                         <span>🍵 ${c.recipiente || 'Gaiwan'}</span> <span>🏪 ${c.tienda || 'N/A'}</span>
+                        ${c.ingredientes ? `<p class="text-xs text-stone-400 mb-2 font-sans italic">🍎 Composición: ${c.ingredientes}</p>` : ''}
                     </div>
 
                     <p class="text-stone-700 leading-relaxed mb-4 italic">"${c.comentario}"</p>
@@ -96,6 +97,7 @@
                     <div class="text-xs font-sans space-y-1 text-stone-500">
                         <p>🌿 <span class="text-stone-700">${s.tipo}</span></p>
                         <p>📍 ${s.origen} (${s.añada})</p>
+                        ${s.ingredientes ? `<p class="italic text-stone-400">🍎 Incluye: ${s.ingredientes}</p>` : ''}
                         <p class="text-emerald-700 font-medium pt-1">🏪 ${s.tienda || 'Desconocida'}</p>
                     </div>
 

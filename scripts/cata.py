@@ -1,6 +1,7 @@
 import json
 import os
 from datetime import date
+import subprocess
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STASH_PATH = os.path.join(BASE_DIR, '..', 'data', 'stash.json')
@@ -10,6 +11,32 @@ SHOPS_PATH = os.path.join(BASE_DIR, '..', 'data', 'shops.json')
 TIPOS_TE = [ "Oolong", "Sheng Pu-erh", "Shou Pu-erh", "Té Verde", "Té Blanco", "Té Negro", "Té Amarillo", "Rooibos", "Yerba Mate" ]
 RECIPIENTES = ["Gaiwan de Porcelana", "Tetera de Arcilla (Yixing/Jianshui)", "Gaiwan de Cristal", "Tetera de Porcelana", "Tetera Kyusu",
                "Mate de madera", "Mate de cristal", "Mate de acero", "Mate de calabaza"]
+
+def publicar_cambios():
+    limpiar_pantalla()
+    print("--- 🌐 ENVIANDO DATOS A GITHUB ---")
+
+    try:
+        # Añadimos los cambios
+        subprocess.run(["git", "add", "data/*.json"], check=True)
+
+        # Hacemos el commit
+        mensaje = f"Cata realizada el {date.today()}"
+        subprocess.run(["git", "commit", "-m", mensaje], check=True)
+
+        # El comando 'push' se encargará de pedirte credenciales si las necesita
+        print("\nSubiendo... Si se te solicita, introduce tu usuario/token:")
+        subprocess.run(["git", "push"], check=True)
+
+        print("\n✅ ¡Publicado con éxito!")
+        input("Pulsa Enter para volver...")
+
+    except subprocess.CalledProcessError:
+        print("\n❌ Git se detuvo (quizás cancelaste el login o no hay cambios).")
+        input("Pulsa Enter para volver...")
+    except Exception as e:
+        print(f"\n❌ Error inesperado: {e}")
+        input("Pulsa Enter para volver...")
 
 def seleccionar_recipiente():
     print("\n--- Selecciona el recipiente de infusión ---")
@@ -83,6 +110,10 @@ def crear_nuevo_te(stash):
     añada = input("Añada/Año (opcional): ") or "N/A"
     origen = input("Origen/Región (opcional): ") or "Desconocido"
 
+    ingredientes = None
+    if input("¿Es una mezcla/blend? (s/n): ").lower() == 's':
+        ingredientes = input("Ingredientes (ej: Té negro, bergamota, pétalos): ") or "Mezcla"
+
     print("Tags del té (separados por comas, ej: floral, tostado): ")
     tags = [t.strip().lower() for t in input("> ").split(",") if t.strip()]
 
@@ -94,7 +125,8 @@ def crear_nuevo_te(stash):
         "origen": origen,
         "añada": añada,
         "en_stock": True,
-        "tags": tags
+        "tags": tags,
+        "ingredientes": ingredientes
     }
     stash.append(te)
     save_json(STASH_PATH, stash)
@@ -150,7 +182,8 @@ def menu_principal():
     print("\n--- 🍵 GESTOR DE GONGFU CHA ---")
     print("1. Registrar nueva cata")
     print("2. Gestionar Stash / Inventario")
-    print("3. Salir")
+    print("3. 🌐 Publicar cambios en la Web")
+    print("4. Salir")
 
     opc = input("\nElige una opción: ")
 
@@ -190,6 +223,9 @@ def menu_principal():
         gestionar_inventario()
 
     elif opc == "3":
+        publicar_cambios()
+    
+    elif opc == "4":
         limpiar_pantalla()
         print("¡Buen té! Hasta luego.")
         exit()
