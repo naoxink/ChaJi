@@ -6,7 +6,7 @@
     "tienda": "Tea Shop",
     "origen": "Tailandia",
     "añada": "N/A",
-    "en_stock": true,
+    "en_stock": false,
     "tags": [
       "hoja grande",
       "oscuro"
