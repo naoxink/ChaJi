@@ -58,5 +58,21 @@
       "dulce",
       "mezcla"
     ]
+  },
+  {
+    "id": "6",
+    "nombre": "Pu-erh (ripe)",
+    "tipo": "Shou Pu-erh",
+    "tienda": "La tetería",
+    "origen": "Desconocido",
+    "añada": "N/A",
+    "en_stock": false,
+    "tags": [
+      "madera",
+      "humedad",
+      "tierra",
+      "café"
+    ],
+    "ingredientes": null
   }
 ]

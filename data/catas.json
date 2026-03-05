@@ -61,5 +61,23 @@
       "dulce",
       "laura"
     ]
+  },
+  {
+    "fecha": "2026-03-05",
+    "te_id": "6",
+    "nombre": "Pu-erh (ripe)",
+    "tienda": "La tetería",
+    "ingredientes": null,
+    "recipiente": "Gaiwan de Porcelana",
+    "puntuacion": 3.5,
+    "parametros": "6g / 100ml / 100ºC",
+    "comentario": "Me gusta infundirlo mucho tiempo para que salga negro como el café, fuertote. No es de gran calidad este pero sirve perfectamente para los desayunos y meriendas. Para degustación mejor otro de mayor calidad.",
+    "tags": [
+      "café",
+      "humedad",
+      "tierra",
+      "desayuno",
+      "madera"
+    ]
   }
 ]
