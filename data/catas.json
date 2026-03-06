@@ -79,5 +79,22 @@
       "desayuno",
       "madera"
     ]
+  },
+  {
+    "fecha": "2026-03-06",
+    "te_id": "2",
+    "nombre": "Special Yellow Sun",
+    "tienda": "Tea Shop",
+    "ingredientes": null,
+    "recipiente": "Gaiwan de Arcilla",
+    "puntuacion": 2.5,
+    "parametros": "5g / 100ml / 90ºC",
+    "comentario": "Hoja fina, olor dulce y fresco (en seco). Es más parecido a un té verde que a los otros amarillos que he probado. El color de la infusión es muy claro, casi como un té blanco. Si sale más oscuro es demasiado amargo. Es frresco y deja un recuerdo floral.",
+    "tags": [
+      "infusiónrápida",
+      "freco",
+      "desayuno",
+      "floral"
+    ]
   }
 ]
