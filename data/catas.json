@@ -96,5 +96,21 @@
       "desayuno",
       "floral"
     ]
+  },
+  {
+    "fecha": "2026-03-07",
+    "te_id": "3",
+    "nombre": "Ya Bao Silver Buds",
+    "tienda": "Tea Shop",
+    "ingredientes": null,
+    "recipiente": "Tetera de cristal",
+    "puntuacion": 3.0,
+    "parametros": "5g / 125ml / 90ºC",
+    "comentario": "La hoja seca huele muy bien. El color de la infusión es casi transparente, muy suave al igual que el sabor..",
+    "tags": [
+      "suave",
+      "duradero",
+      "desayuno"
+    ]
   }
 ]
