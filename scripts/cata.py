@@ -9,8 +9,10 @@ CATAS_PATH = os.path.join(BASE_DIR, '..', 'data', 'catas.json')
 SHOPS_PATH = os.path.join(BASE_DIR, '..', 'data', 'shops.json')
 
 TIPOS_TE = [ "Oolong", "Sheng Pu-erh", "Shou Pu-erh", "Té Verde", "Té Blanco", "Té Negro", "Té Amarillo", "Rooibos", "Yerba Mate" ]
-RECIPIENTES = ["Gaiwan de Porcelana", "Tetera de Arcilla (Yixing/Jianshui)", "Gaiwan de Cristal", "Tetera de Porcelana", "Tetera Kyusu",
-               "Mate de madera", "Mate de cristal", "Mate de acero", "Mate de calabaza"]
+RECIPIENTES = [
+    "Gaiwan de Arcilla (Yixing/Jianshui)", "Gaiwan de Porcelana", "Gaiwan de Cristal",
+    "Tetera de Arcilla (Yixing/Jianshui)", "Tetera de Porcelana", "Tetera de Cristal",
+    "Mate de Madera", "Mate de Cristal", "Mate de Acero", "Mate de Calabaza"]
 
 def publicar_cambios():
     limpiar_pantalla()
