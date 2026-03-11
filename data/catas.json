@@ -112,5 +112,20 @@
       "duradero",
       "desayuno"
     ]
+  },
+  {
+    "fecha": "2026-03-11",
+    "te_id": "2",
+    "nombre": "Special Yellow Sun",
+    "tienda": "Tea Shop",
+    "ingredientes": null,
+    "recipiente": "Gaiwan de Arcilla",
+    "puntuacion": 3.5,
+    "parametros": "5g / 100ml / 80ºC",
+    "comentario": "A esta temperatura es mucho más manejable. Más suave, claro está.",
+    "tags": [
+      "suave",
+      "ligero"
+    ]
   }
 ]
