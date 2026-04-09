@@ -74,5 +74,35 @@
       "café"
     ],
     "ingredientes": null
+  },
+  {
+    "id": "7",
+    "nombre": "Pu-erh emperor",
+    "tipo": "Shou Pu-erh",
+    "tienda": "Té&Té",
+    "origen": "China",
+    "añada": "2018",
+    "en_stock": true,
+    "tags": [
+      "oscuro",
+      "intenso",
+      "madera",
+      "tierra"
+    ],
+    "ingredientes": null
+  },
+  {
+    "id": "8",
+    "nombre": "Organic raw pu-erh",
+    "tipo": "Sheng Pu-erh",
+    "tienda": "Té&Té",
+    "origen": "China, Wuhan",
+    "añada": "2019",
+    "en_stock": true,
+    "tags": [
+      "fresco",
+      "intenso"
+    ],
+    "ingredientes": null
   }
 ]
