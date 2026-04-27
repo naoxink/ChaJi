@@ -104,5 +104,36 @@
       "intenso"
     ],
     "ingredientes": null
+  },
+  {
+    "id": "9",
+    "nombre": "Oolong Anxi Tie Kuan Yin",
+    "tipo": "Oolong",
+    "tienda": "Golden Tips",
+    "origen": "Anxi, Fujian, China",
+    "añada": "N/A",
+    "en_stock": true,
+    "tags": [
+      "enrollado",
+      "fresco",
+      "floral"
+    ],
+    "ingredientes": null
+  },
+  {
+    "id": "10",
+    "nombre": "King of Pu-erh",
+    "tipo": "Shou Pu-erh",
+    "tienda": "Golden Tips",
+    "origen": "Yunnan, China",
+    "añada": "N/A",
+    "en_stock": true,
+    "tags": [
+      "oscuro",
+      "tierra húmeda",
+      "cuero",
+      "madera húmeda"
+    ],
+    "ingredientes": null
   }
 ]
