@@ -127,5 +127,22 @@
       "suave",
       "ligero"
     ]
+  },
+  {
+    "fecha": "2026-05-06",
+    "te_id": "9",
+    "nombre": "Oolong Anxi Tie Kuan Yin",
+    "tienda": "Golden Tips",
+    "ingredientes": null,
+    "recipiente": "Gaiwan de Arcilla (Yixing/Jianshui)",
+    "puntuacion": 4.0,
+    "parametros": "4g / 100ml / 90º",
+    "comentario": "Oolong en su estado puro. Muy fresco. Un poco de astringencia, lo suyo es hacer las infusiones flash. Color muy clarito. Las hojas crecen muchísimo; es rolled.",
+    "tags": [
+      "floral",
+      "desayuno",
+      "fresco",
+      "enrollado"
+    ]
   }
 ]
