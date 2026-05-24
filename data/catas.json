@@ -144,5 +144,24 @@
       "fresco",
       "enrollado"
     ]
+  },
+  {
+    "fecha": "2026-05-24",
+    "te_id": "10",
+    "nombre": "King of Pu-erh",
+    "tienda": "Golden Tips",
+    "ingredientes": null,
+    "recipiente": "Gaiwan de Arcilla (Yixing/Jianshui)",
+    "puntuacion": 3.0,
+    "parametros": "5g / 100ml / 90ºC",
+    "comentario": "No sé si este lote ha salido regular pero no me ha gustado tanto como la última vez que lo probé. Está bien, buen pu-erh, pero lo recordaba mejor. MUY intenso pero dura pocas infusiones.",
+    "tags": [
+      "tierra húmeda",
+      "tierra mojada",
+      "cuero",
+      "madera húmeda",
+      "oscuro",
+      "intenso"
+    ]
   }
 ]
