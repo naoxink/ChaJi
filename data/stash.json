@@ -135,5 +135,27 @@
       "madera húmeda"
     ],
     "ingredientes": null
+  },
+  {
+    "id": "11",
+    "nombre": "Rosamonte",
+    "tipo": "Yerba Mate",
+    "tienda": "Carrefour",
+    "origen": "Argentina",
+    "añada": "N/A",
+    "en_stock": true,
+    "tags": [],
+    "ingredientes": null
+  },
+  {
+    "id": "12",
+    "nombre": "Amanda",
+    "tipo": "Yerba Mate",
+    "tienda": "Carrefour",
+    "origen": "Argentina",
+    "añada": "N/A",
+    "en_stock": true,
+    "tags": [],
+    "ingredientes": null
   }
 ]
