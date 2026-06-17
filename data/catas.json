@@ -163,5 +163,24 @@
       "oscuro",
       "intenso"
     ]
+  },
+  {
+    "fecha": "2026-06-17",
+    "te_id": "9",
+    "nombre": "Oolong Anxi Tie Kuan Yin",
+    "tienda": "Golden Tips",
+    "ingredientes": null,
+    "recipiente": "Gaiwan de Porcelana",
+    "puntuacion": 4.0,
+    "parametros": "~4g / 110ml / 80ºC",
+    "comentario": "Ahora le noto como un toque a canela, dulce. Quizás sea por las tostadas con aceite y sal. No lo había notado en las anteriores catas.",
+    "tags": [
+      "dulce",
+      "suave",
+      "enrollado",
+      "floral",
+      "canela",
+      "fresco"
+    ]
   }
 ]
