@@ -157,5 +157,42 @@
     "en_stock": true,
     "tags": [],
     "ingredientes": null
+  },
+  {
+    "id": "13",
+    "nombre": "Té Blanco Shangri-La Nepal Organic",
+    "tipo": "Té Blanco",
+    "tienda": "Tea Shop",
+    "origen": "Himalaya, Nepal",
+    "añada": "N/A",
+    "en_stock": true,
+    "tags": [],
+    "ingredientes": null
+  },
+  {
+    "id": "14",
+    "nombre": "Formosa Tarry Lapsang Souchong",
+    "tipo": "Té Negro",
+    "tienda": "Tea Shop",
+    "origen": "Taiwan",
+    "añada": "N/A",
+    "en_stock": true,
+    "tags": [
+      "ahumado",
+      "oscuro",
+      "intenso"
+    ],
+    "ingredientes": null
+  },
+  {
+    "id": "15",
+    "nombre": "Milky Oolong",
+    "tipo": "Oolong",
+    "tienda": "Tea Shop",
+    "origen": "China",
+    "añada": "N/A",
+    "en_stock": true,
+    "tags": [],
+    "ingredientes": null
   }
 ]
