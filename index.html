@@ -1,116 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cha Ji - Mi Diario de Té</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cha Ji 茶记 · Diario de Té</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="p-4 md:p-8">
-    <div class="max-w-4xl mx-auto">
-        <header class="text-center mb-10">
-            <h1 class="text-5xl mb-2 italic">茶记</h1>
-            <p class="text-stone-500 uppercase tracking-widest text-xs">Registro de té</p>
-        </header>
+<body>
 
-        <nav class="flex justify-center gap-12 mb-8 border-b border-stone-200 text-lg">
-            <button onclick="showTab('catas')" id="btn-catas" class="pb-2 tab-active tracking-wide">DIARIO</button>
-            <button onclick="showTab('stash')" id="btn-stash" class="pb-2 tracking-wide">DESPENSA</button>
-        </nav>
+<div class="page">
 
-        <div id="view-catas" class="space-y-6">
-            </div>
+  <header class="hero">
+    <p class="eyebrow">茶记 · Diario digital de té</p>
+    <h1>Cha Ji</h1>
+    <p class="sub">Registro de catas y despensa personal de Gongfu Cha.</p>
+  </header>
 
-        <div id="view-stash" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6">
-            </div>
+  <nav class="tabs" role="tablist">
+    <button class="tab" id="btn-catas" role="tab" aria-selected="true" onclick="showTab('catas')">Diario</button>
+    <button class="tab" id="btn-stash" role="tab" aria-selected="false" onclick="showTab('stash')">Despensa</button>
+  </nav>
+
+  <!-- ---------- DIARIO (catas) ---------- -->
+  <section id="view-catas" class="view">
+
+    <div class="controls">
+      <div class="search-wrap">
+        <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="search" id="search-catas" placeholder="Buscar cata por té, tienda, comentario…" aria-label="Buscar en el diario">
+      </div>
     </div>
 
-    <script>
-        let dataCatas = [];
-        let dataStash = [];
+    <p class="results-count" id="count-catas" aria-live="polite"></p>
 
-        async function init() {
-            try {
-                const [resC, resS] = await Promise.all([
-                    fetch('./data/catas.json'),
-                    fetch('./data/stash.json')
-                ]);
-                dataCatas = await resC.json();
-                dataStash = await resS.json();
-                renderCatas();
-                renderStash();
-            } catch (e) {
-                console.error("Error cargando datos:", e);
-            }
-        }
+    <ul class="stash" id="catas-list"></ul>
 
-        function showTab(tab) {
-            document.getElementById('view-catas').classList.toggle('hidden', tab !== 'catas');
-            document.getElementById('view-stash').classList.toggle('hidden', tab !== 'stash');
-            document.getElementById('btn-catas').className = tab === 'catas' ? 'pb-2 tab-active' : 'pb-2';
-            document.getElementById('btn-stash').className = tab === 'stash' ? 'pb-2 tab-active' : 'pb-2';
-        }
+    <p class="empty-state" id="empty-catas" hidden>No hay catas registradas todavía. Añádelas con <code>python scripts/cata.py</code>.</p>
+  </section>
 
-        function renderCatas() {
-            const container = document.getElementById('view-catas');
-            const catasOrdered = [...dataCatas].sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+  <!-- ---------- DESPENSA (stash) ---------- -->
+  <section id="view-stash" class="view" hidden>
 
-            container.innerHTML = catasOrdered.map(c => `
-                <div class="card p-6 border-l-4 border-stone-800">
-                    <div class="flex justify-between items-start mb-2">
-                        <div>
-                            <span class="text-xs text-stone-400 font-sans">${c.fecha}</span>
-                            <h3 class="text-2xl font-bold">${c.nombre}</h3>
-                        </div>
-                        <div class="text-right">
-                            <span class="text-xl font-bold text-emerald-800">${c.puntuacion} <small class="text-xs text-stone-400">/ 5</small></span>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-stone-500 mb-4 font-sans">
-                        <span>⚖️ ${c.parametros}</span>
-                        <span>🍵 ${c.recipiente || 'Gaiwan'}</span> <span>🏪 ${c.tienda || 'N/A'}</span>
-                        ${c.ingredientes ? `<p class="text-xs text-stone-400 mb-2 font-sans italic">🍎 Composición: ${c.ingredientes}</p>` : ''}
-                    </div>
+    <div class="controls">
+      <div class="search-wrap">
+        <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="search" id="search-stash" placeholder="Buscar por nombre, origen, tienda…" aria-label="Buscar en la despensa">
+      </div>
+      <div class="selects">
+        <select id="filter-tipo" aria-label="Filtrar por tipo">
+          <option value="">Todos los tipos</option>
+        </select>
+        <select id="filter-tienda" aria-label="Filtrar por tienda">
+          <option value="">Todas las tiendas</option>
+        </select>
+        <button id="filter-stock" class="chip" type="button" aria-pressed="false">
+          <span class="chip-dot"></span> Sólo en stock
+        </button>
+      </div>
+    </div>
 
-                    <p class="text-stone-700 leading-relaxed mb-4 italic">"${c.comentario}"</p>
-                    
-                    <div class="flex flex-wrap gap-2">
-                        ${(c.tags || []).map(t => `<span class="tag">#${t}</span>`).join('')}
-                    </div>
-                </div>
-            `).join('');
-        }
+    <p class="results-count" id="count-stash" aria-live="polite"></p>
 
-        function renderStash() {
-            const container = document.getElementById('view-stash');
-            container.innerHTML = dataStash.map(s => `
-                <div class="card p-5 border ${s.en_stock ? 'border-stone-100' : 'opacity-60 bg-stone-50 border-transparent'}">
-                    <div class="flex justify-between items-start mb-2">
-                        <h4 class="font-bold text-lg leading-tight">${s.nombre}</h4>
-                        <span class="text-[10px] font-sans px-2 py-0.5 rounded-full ${s.en_stock ? 'bg-emerald-50 text-emerald-700 border border-emerald-100' : 'bg-stone-200 text-stone-600'}">
-                            ${s.en_stock ? 'EN STOCK' : 'AGOTADO'}
-                        </span>
-                    </div>
+    <ul class="stash" id="stash-list"></ul>
 
-                    <div class="text-xs font-sans space-y-1 text-stone-500">
-                        <p>🌿 <span class="text-stone-700">${s.tipo}</span></p>
-                        <p>📍 ${s.origen} (${s.añada})</p>
-                        ${s.ingredientes ? `<p class="italic text-stone-400">🍎 Incluye: ${s.ingredientes}</p>` : ''}
-                        <p class="text-emerald-700 font-medium pt-1">🏪 ${s.tienda || 'Desconocida'}</p>
-                    </div>
+    <p class="empty-state" id="empty-stash" hidden>Ningún té coincide con esa búsqueda. Prueba con otro término.</p>
 
-                    ${s.tags && s.tags.length > 0 ? `
-                        <div class="mt-4 flex flex-wrap gap-1">
-                            ${s.tags.map(t => `<span class="text-[10px] bg-stone-100 text-stone-500 px-1.5 py-0.5 rounded">#${t}</span>`).join('')}
-                        </div>
-                    ` : ''}
-                </div>
-            `).join('');
-        }
+    <footer class="foot">
+      <span class="legend-title">Color por tipo</span>
+      <ul class="legend" id="legend"></ul>
+    </footer>
+  </section>
 
-        init();
-    </script>
+</div>
+
+<script src="assets/app.js"></script>
 </body>
 </html>
