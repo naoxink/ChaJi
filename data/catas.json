@@ -1,5 +1,18 @@
 [
   {
+    "fecha": "2026-08-20",
+    "te_id": "13",
+    "nombre": "Té Blanco Shangri-La Nepal Organic",
+    "tienda": "Tea Shop",
+    "recipiente": "Gaiwan de Cristal",
+    "puntuacion": 6,
+    "parametros": "3.75g / 100ml / 70ºC",
+    "comentario": "Prácticamente incoloro. Olor suave clásico de té blanco. Sabor suave. Un poco de astringencia final. Sobre la tercera infusión va ganando color, olor y astringencia. NO PASARSE con los tiempos de infusión una vez se van abriendo las hojas.",
+    "tags": [
+      "suave"
+    ]
+  },
+  {
     "fecha": "2026-02-25",
     "te_id": "1",
     "nombre": "Doi Pu Muen Dark Oolong",
