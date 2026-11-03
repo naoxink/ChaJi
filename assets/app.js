@@ -21,6 +21,7 @@ const state = {
   soloStock: false,
   openCata: null,
   openStash: null,
+  teId: null,
 };
 
 const els = {
@@ -28,6 +29,9 @@ const els = {
   catasSearch: document.getElementById("search-catas"),
   catasCount: document.getElementById("count-catas"),
   catasEmpty: document.getElementById("empty-catas"),
+  activeFilter: document.getElementById("active-filter"),
+  activeFilterName: document.getElementById("active-filter-name"),
+  clearFilter: document.getElementById("clear-filter"),
 
   stashList: document.getElementById("stash-list"),
   stashSearch: document.getElementById("search-stash"),
@@ -98,6 +102,22 @@ function showTab(tab) {
 }
 window.showTab = showTab;
 
+function showCatasFor(teId) {
+  state.teId = String(teId);
+  state.catasSearch = "";
+  els.catasSearch.value = "";
+  state.openCata = null;
+  showTab("catas");
+  renderCatas();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+window.showCatasFor = showCatasFor;
+
+function clearTeaFilter() {
+  state.teId = null;
+  renderCatas();
+}
+
 function populateStashFilters() {
   const tipos = [...new Set(state.stash.map((t) => t.tipo))].sort((a, b) => a.localeCompare(b, "es"));
   const tiendas = [...new Set(state.stash.map((t) => t.tienda))].sort((a, b) => a.localeCompare(b, "es"));
@@ -133,6 +153,7 @@ function bindEvents() {
     els.filterStock.setAttribute("aria-pressed", String(state.soloStock));
     renderStash();
   });
+  els.clearFilter.addEventListener("click", clearTeaFilter);
 }
 
 /* ---------------- DIARIO (catas) ---------------- */
@@ -141,6 +162,7 @@ function getFilteredCatas() {
   const q = normalize(state.catasSearch);
   return [...state.catas]
     .filter((c) => {
+      if (state.teId && String(c.te_id) !== state.teId) return false;
       if (!q) return true;
       const haystack = normalize(
         [c.nombre, c.tienda, c.comentario, c.recipiente, ...(c.tags || [])].join(" ")
@@ -152,7 +174,15 @@ function getFilteredCatas() {
 
 function renderCatas() {
   const filtered = getFilteredCatas();
-  els.catasCount.textContent = `Mostrando ${filtered.length} de ${state.catas.length}`;
+
+  const te = state.teId && state.stash.find((t) => String(t.id) === state.teId);
+  els.activeFilter.hidden = !state.teId;
+  if (te) els.activeFilterName.textContent = te.nombre;
+
+  els.catasCount.textContent = state.teId && filtered.length === 0
+    ? "Este té todavía no tiene catas"
+    : `Mostrando ${filtered.length} de ${state.catas.length}`;
+
   els.catasEmpty.hidden = filtered.length !== 0 || state.catas.length === 0;
   els.catasList.hidden = filtered.length === 0;
   els.catasList.innerHTML = filtered.map((c) => renderCataRow(c)).join("");
@@ -243,6 +273,7 @@ function renderStashRow(t) {
   const hasYear = t.añada && t.añada !== "N/A";
   const tags = t.tags || [];
   const hasIngredients = !!t.ingredientes;
+  const nCatas = state.catas.filter((c) => String(c.te_id) === String(t.id)).length;
 
   return `
     <li class="stash-item ${isOpen ? "open" : ""}" style="--type-color:${color}">
@@ -269,6 +300,7 @@ function renderStashRow(t) {
           </div>
           ${hasIngredients ? `<div class="detail-row"><span class="detail-label">Ingredientes</span>${escapeHtml(t.ingredientes)}</div>` : ""}
           ${tags.length ? `<div class="detail-row"><span class="detail-label">Notas</span><div class="detail-tags">${tags.map((tag) => `<span class="pill">${escapeHtml(tag)}</span>`).join("")}</div></div>` : ""}
+          ${nCatas ? `<div class="detail-row"><button type="button" class="link-btn" onclick="showCatasFor('${escapeHtml(t.id)}')">Ver ${nCatas} ${nCatas === 1 ? "cata" : "catas"} →</button></div>` : ""}
         </div>
       </div>
     </li>

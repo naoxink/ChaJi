@@ -380,3 +380,32 @@ select:focus, select:hover { border-color: var(--accent); }
 }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+.active-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+}
+.active-filter[hidden] { display: none; }
+
+.active-filter button,
+.link-btn {
+  all: unset;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.active-filter button:hover,
+.link-btn:hover { text-decoration: underline; }
+.active-filter button:focus-visible,
+.link-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
