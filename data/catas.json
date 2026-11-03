@@ -195,5 +195,21 @@
       "canela",
       "fresco"
     ]
+  },
+  {
+    "fecha": "2026-11-03",
+    "te_id": "13",
+    "nombre": "Té Blanco Shangri-La Nepal Organic",
+    "tienda": "Tea Shop",
+    "ingredientes": null,
+    "recipiente": "Gaiwan de Arcilla (Yixing/Jianshui)",
+    "puntuacion": 4.0,
+    "parametros": "5g / 100ml / 80º",
+    "comentario": "Con estos parámetros mucho mejor, más sabor, sin astringencia. Infusiones cortas (~10s). Meloso y suave. Se parece más a un té amarillo.",
+    "tags": [
+      "meloso",
+      "desayuno",
+      "suave"
+    ]
   }
 ]
