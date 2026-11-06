@@ -39,7 +39,7 @@
     "tienda": "Supercaro",
     "origen": "Argentina",
     "añada": "N/A",
-    "en_stock": false,
+    "en_stock": true,
     "tags": [
       "suave",
       "con palo"
@@ -154,7 +154,7 @@
     "tienda": "Carrefour",
     "origen": "Argentina",
     "añada": "N/A",
-    "en_stock": true,
+    "en_stock": false,
     "tags": [],
     "ingredientes": null
   },
